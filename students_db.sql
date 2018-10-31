@@ -4,27 +4,26 @@ CREATE DATABASE students;
 USE students;
 
 CREATE TABLE user (
-	ID smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-	Name varchar(30) NOT NULL,
+	ID smallint(5) 				UNSIGNED NOT NULL 	AUTO_INCREMENT,
+	Name varchar(30) 			NOT NULL,
 	PRIMARY KEY (ID)
 );
 
 CREATE TABLE courseName (
-	ID smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-	Name varchar(50) NOT NULL UNIQUE,
+	ID 		smallint(5) 		UNSIGNED NOT NULL 	AUTO_INCREMENT,
+	Name 	varchar(50) 		NOT NULL UNIQUE,
 	PRIMARY KEY (ID)
 );
 
 CREATE TABLE coursesTaken (
-	ID			INT				PRIMARY KEY		AUTO_INCREMENT,
-    StudentID 	smallint(5)		NOT NULL,
-    CourseID	smallint(5)		NOT NULL,
-    FOREIGN KEY (StudentID) REFERENCES user (ID),
-    FOREIGN KEY (CourseID)	REFERENCES courseName(ID)
+	ID			INT				PRIMARY KEY			AUTO_INCREMENT,
+    StudentID 	smallint(5)		UNSIGNED NOT NULL,
+    CourseID	smallint(5)		UNSIGNED NOT NULL
 );
 
+
 ALTER TABLE coursesTaken
-ADD CONSTRAINT FK_course
+ADD CONSTRAINT FK_courseName
 FOREIGN KEY (CourseID) REFERENCES courseName (ID)
 ON UPDATE CASCADE;
 
