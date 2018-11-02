@@ -3,7 +3,7 @@ CREATE DATABASE students;
 
 USE students;
 
-CREATE TABLE user (
+CREATE TABLE student (
 	ID smallint(5) 				UNSIGNED NOT NULL 	AUTO_INCREMENT,
 	Name varchar(30) 			NOT NULL,
 	PRIMARY KEY (ID)
@@ -35,7 +35,7 @@ INSERT INTO courseName VALUES
 (NULL, 'PHP'),
 (NULL, 'MySQL');
 
-INSERT INTO user VALUES
+INSERT INTO student VALUES
 (NULL, 'Alice'),
 (NULL, 'Bob'),
 (NULL, 'Caroline'),
